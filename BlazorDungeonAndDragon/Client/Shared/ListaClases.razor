@@ -2,18 +2,18 @@
 <text> Mostrar Botones</text>
 
 <ListaGenerica Lista="Clases">
-    <HayRegistros>
-           <ClaseIndividual Clase="context" MostrarBotones="MostrarBotones" EliminarClase="EliminarClase" />
+    <HayRegistros Context="clase">
+        <ClaseIndividual Clase="clase" MostrarBotones="MostrarBotones" EliminarClase="EliminarClase" />
     </HayRegistros>
 </ListaGenerica>
 
 
 @*@foreach (var clase in Clases)
-{
-    <ClaseIndividual Clase="clase"
-                     MostrarBotones="MostrarBotones"
-                     EliminarClase="EliminarClase" />
-}*@
+    {
+        <ClaseIndividual Clase="clase"
+                         MostrarBotones="MostrarBotones"
+                         EliminarClase="EliminarClase" />
+    }*@
 
 
 @code {
