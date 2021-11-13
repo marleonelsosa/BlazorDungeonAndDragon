@@ -1,0 +1,25 @@
+﻿<h3>ListadoClases</h3>
+
+@if (Clases == null)
+{
+    <img src="https://c.tenor.com/9v4dnxuEvucAAAAC/animated-armor-dnd.gif" style="max-width: 20%;" />
+
+    <text>Cargando...</text>
+}
+else if (Clases.Count == 0)
+{
+    <text>Lo siento, no se han encontrado registros...</text>
+}
+else
+{
+    @foreach (var clase in Clases)
+    {
+        <MostrarClase Clase="clase"/>
+    }
+}
+
+@code {
+    [Parameter] public List<Clase> Clases { get; set; }
+
+    
+}
