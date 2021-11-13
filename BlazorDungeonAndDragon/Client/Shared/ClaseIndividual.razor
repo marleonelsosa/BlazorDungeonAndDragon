@@ -1,0 +1,24 @@
+﻿<div>
+    <h5><b>Nombre: </b>@Clase.Nombre</h5>
+    <p><b>Descripción: </b> @Clase.Descripcion</p>
+    <p><b>Puntos de Golpe: </b>@Clase.PuntosDeGolpe</p>
+
+    @if (MostrarBotones)
+    {
+        <div>
+            <button type="button" class="btn btn-danger"
+                    @onclick="@(() => EliminarClase.InvokeAsync(Clase))">
+                Eliminar
+            </button>
+        </div>
+    }
+
+
+
+</div>
+
+@code {
+    [Parameter] public Clase Clase { get; set; }
+    [Parameter] public bool MostrarBotones { get; set; } = false;
+    [Parameter] public EventCallback<Clase> EliminarClase { get; set; }
+}

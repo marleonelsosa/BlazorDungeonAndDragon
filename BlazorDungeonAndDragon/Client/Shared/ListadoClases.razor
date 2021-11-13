@@ -1,25 +1,28 @@
-﻿<h3>ListadoClases</h3>
+﻿<input type="checkbox" @bind="MostrarBotones" />
+<text> Mostrar Botones</text>
 
-@if (Clases == null)
-{
-    <img src="https://c.tenor.com/9v4dnxuEvucAAAAC/animated-armor-dnd.gif" style="max-width: 20%;" />
+<ListaGenerica Lista="Clases">
+    <HayRegistros>
+           <ClaseIndividual Clase="context" MostrarBotones="MostrarBotones" EliminarClase="EliminarClase" />
+    </HayRegistros>
+</ListaGenerica>
 
-    <text>Cargando...</text>
-}
-else if (Clases.Count == 0)
+
+@*@foreach (var clase in Clases)
 {
-    <text>Lo siento, no se han encontrado registros...</text>
-}
-else
-{
-    @foreach (var clase in Clases)
-    {
-        <MostrarClase Clase="clase"/>
-    }
-}
+    <ClaseIndividual Clase="clase"
+                     MostrarBotones="MostrarBotones"
+                     EliminarClase="EliminarClase" />
+}*@
+
 
 @code {
     [Parameter] public List<Clase> Clases { get; set; }
+    bool MostrarBotones = false;
 
-    
+    void EliminarClase(Clase clase)
+    {
+        Clases.Remove(clase);
+        Console.WriteLine($"Se ha eliminado la clase: {clase.Nombre}");
+    }
 }
