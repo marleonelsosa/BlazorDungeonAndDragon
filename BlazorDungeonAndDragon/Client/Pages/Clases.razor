@@ -2,18 +2,7 @@
 
 <div>
     <h1>Clases</h1>
-    <ListaClases Clases="ObtenerClases()" />
+    <ListaClases Clases="_Clases" />
 </div>
 
-@code {
-
-    private List<Clase> ObtenerClases()
-    {
-        return new List<Clase>()
-{
-                new Clase(){ Nombre = "Guerrero", PuntosDeGolpe = 10, Descripcion = "Todos los guerreros comparten un dominio magistral de las armas y armaduras, y un exhaustivo conocimiento de las habilidades del combate. Además, están muy relacionados con la muerte, tanto repartiéndola como mirándola fijamente, desafiantes."},
-                new Clase(){ Nombre = "Bárbaro", PuntosDeGolpe = 12, Descripcion = "Para algunos, su rabia brota de la comunión con espíritus de animales salvajes. Otros recurren a su hirviente reserva de ira frente a un mundo lleno de dolor. Para los bárbaros, la furia es un poder que no sólo les proporciona un frenesí ciego en la batalla, sino también extraordinarios reflejos, resistencia y proezas de fuerza."},
-                new Clase(){ Nombre = "Mago", PuntosDeGolpe = 6, Descripcion = "Los magos son los practicantes supremos de la magia, definidos y unidos como una clase por los hechizos que conjuran. A partir de la sutil onda de la magia que impregna el cosmos, los magos lanzan explosivos hechizos de fuego, arcos voltaicos, sutiles engaños y brutales formas de control mental."}
-        };
-    }
-}
+<button @onclick="AgregarClase">Agregar Clase</button>
