@@ -10,13 +10,13 @@ namespace BlazorDungeonAndDragon.Client.Pages
 {
     public partial class Clases
     {
-        [Inject] IRepositorio repositorio { get; set; }
+        [Inject] IRepositorio _Repositorio { get; set; }
 
         private List<Clase> _Clases;
 
         protected override void OnInitialized()
         {
-            _Clases = repositorio.ObtenerClases();
+            _Clases = _Repositorio.ObtenerClases();
         }
 
         void AgregarClase()

@@ -7,6 +7,9 @@
     </HayRegistros>
 </ListaGenerica>
 
+<Confirmacion @ref="confirmacion" onConfirm="EliminarClaseConfirmacion" onCancel="OnCancelConfirmacion">
+    <div>¿Desea borrar la pelicula?</div>
+</Confirmacion>
 
 @*@foreach (var clase in Clases)
     {
@@ -19,10 +22,31 @@
 @code {
     [Parameter] public List<Clase> Clases { get; set; }
     bool MostrarBotones = false;
+    Confirmacion confirmacion;
+    Clase claseABorrar;
 
-    void EliminarClase(Clase clase)
+    async Task EliminarClase(Clase clase)
     {
-        Clases.Remove(clase);
-        Console.WriteLine($"Se ha eliminado la clase: {clase.Nombre}");
+        confirmacion.Mostrar();
+        claseABorrar = clase;
+        //var confirmado = await js.Confirm($"¿Desea eliminar la clase {clase.Nombre}?");
+        //if (confirmado)
+        //{
+        //    clases.Remove(clase);
+        //    Console.WriteLine($"Se ha eliminado la clase: {clase.Nombre}");
+        //}
+    }
+
+    void EliminarClaseConfirmacion()
+    {
+        Clases.Remove(claseABorrar);
+        confirmacion.Ocultar();
+        claseABorrar = null;
+    }
+
+    void OnCancelConfirmacion()
+    {
+        confirmacion.Ocultar();
+        claseABorrar = null;
     }
 }
