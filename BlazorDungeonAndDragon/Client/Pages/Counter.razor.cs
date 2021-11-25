@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static BlazorDungeonAndDragon.Client.Shared.MainLayout;
 
 namespace BlazorDungeonAndDragon.Client.Pages
 {
@@ -14,6 +15,8 @@ namespace BlazorDungeonAndDragon.Client.Pages
         [Inject] ServicioTransient transient { get; set; }
         [Inject] IJSRuntime JS { get; set; }
 
+        public string Color;
+        public string Size;
         protected int currentCount = 0;
         static int currentCountStatic = 0;
 

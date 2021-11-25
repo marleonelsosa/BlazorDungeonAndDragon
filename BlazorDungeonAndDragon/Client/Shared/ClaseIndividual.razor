@@ -1,25 +1,27 @@
 ﻿<div>
-    <img src=@Clase.Imagen align="right" height="100" />
-    <h3><b>@Clase.Nombre</b></h3>
-    <p><b>Descripción: </b> @Clase.Descripcion</p>
-    <p><b>Puntos de Golpe: </b>@Clase.PuntosDeGolpe</p>
-
-    @if (MostrarBotones)
-    {
-        <div>
-            <button type="button" class="btn btn-danger"
-                    @onclick="@(() => EliminarClase.InvokeAsync(Clase))">
-                Eliminar
-            </button>
-        </div>
-    }
-
-
-
+    <div>
+        <h3>@Clase.Nombre</h3>
+    </div>
+    <div style="display: flex; justify-content:left; margin-bottom: 20px">
+        <p><b>Descripción: </b> @Clase.Descripcion</p>
+        <img src=@Clase.Imagen class="imagen imagen-seleccionable" align="right" height="100" />
+    </div>
+    <div>
+        <p><b>Puntos de Golpe: </b>@Clase.PuntosDeGolpe</p>
+    </div>
+        @if (MostrarBotones)
+        {
+            <div>
+                <button type="button" class="btn btn-danger"
+                        @onclick="@(() => EliminarClase.InvokeAsync(Clase))">
+                    Eliminar
+                </button>
+            </div>
+        }
 </div>
 
-@code {
-    [Parameter] public Clase Clase { get; set; }
-    [Parameter] public bool MostrarBotones { get; set; } = false;
-    [Parameter] public EventCallback<Clase> EliminarClase { get; set; }
-}
+    @code {
+        [Parameter] public Clase Clase { get; set; }
+        [Parameter] public bool MostrarBotones { get; set; } = false;
+        [Parameter] public EventCallback<Clase> EliminarClase { get; set; }
+    }

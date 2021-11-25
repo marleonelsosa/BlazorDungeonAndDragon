@@ -10,18 +10,18 @@ namespace BlazorDungeonAndDragon.Client.Pages
 {
     public partial class Clases
     {
-        [Inject] IRepositorio _Repositorio { get; set; }
+        [Inject] IRepositorio Repositorio { get; set; }
 
-        private List<Clase> _Clases;
+        private List<Clase> clases;
 
         protected override void OnInitialized()
         {
-            _Clases = _Repositorio.ObtenerClases();
+            clases = Repositorio.ObtenerClases();
         }
-
+        
         void AgregarClase()
         {
-            _Clases.Add(new Clase() { Nombre = "Clérigo", PuntosDeGolpe = 8, Descripcion = "Los clérigos son intermediarios entre el mundo mortal y los distantes planos divinos. Tan diferentes entre ellos como los dioses a los que sirven, los clérigos se esfuerzan por personificar las obras de sus deidades. No son sacerdotes ordinarios, un clérigo se encuentra imbuido de magia divina." });
+            clases.Add(new Clase() { Nombre = "Clérigo", PuntosDeGolpe = 8, Descripcion = "Los clérigos son intermediarios entre el mundo mortal y los distantes planos divinos. Tan diferentes entre ellos como los dioses a los que sirven, los clérigos se esfuerzan por personificar las obras de sus deidades. No son sacerdotes ordinarios, un clérigo se encuentra imbuido de magia divina." });
         }
     }
 }

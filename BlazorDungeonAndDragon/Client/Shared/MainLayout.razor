@@ -7,11 +7,20 @@
 
     <div class="main">
         <div class="top-row px-4">
-            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+            <a href="https://www.linkedin.com/in/martín-leonel-sosa/" target="_blank" class="ml-md-auto">About me</a>
         </div>
 
         <div class="content px-4">
-            @Body
+                @Body         
         </div>
     </div>
 </div>
+
+@*@code { 
+    AppState appState = new AppState();
+    public class AppState
+    {
+        public string Color { get; set; } = "red";
+        public string Size { get; set; } = "12px";
+    }
+}*@
