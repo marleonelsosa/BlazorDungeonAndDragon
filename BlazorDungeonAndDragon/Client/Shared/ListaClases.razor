@@ -1,11 +1,16 @@
 ﻿<input type="checkbox" @bind="MostrarBotones" />
 <text> Mostrar Botones</text>
 
+
+<div style="display: flex; flex-wrap: wrap; align-items:center;">
 <ListaGenerica Lista="Clases">
     <HayRegistros Context="clase">
         <ClaseIndividual Clase="clase" MostrarBotones="MostrarBotones" EliminarClase="EliminarClase" />
     </HayRegistros>
 </ListaGenerica>
+</div>
+
+
 
 <Confirmacion @ref="confirmacion" onConfirm="EliminarClaseConfirmacion" onCancel="OnCancelConfirmacion" Titulo="Eliminar Clase">
     <div>¿Desea borrar la clase @claseABorrar.Nombre?</div>
@@ -30,16 +35,6 @@
         confirmacion.Mostrar();
         claseABorrar = clase;
     }
-
-    //async Task EliminarClaseJavaScript(Clase clase) //EJEMPLO CON JS
-    //{
-    //    var confirmado = await js.Confirm($"¿Desea eliminar la clase {clase.Nombre}?");
-    //    if (confirmado)
-    //    {
-    //        clases.Remove(clase);
-    //        Console.WriteLine($"Se ha eliminado la clase: {clase.Nombre}");
-    //    }
-    //}
 
     void EliminarClaseConfirmacion()
     {

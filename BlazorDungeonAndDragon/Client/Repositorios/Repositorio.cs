@@ -30,5 +30,10 @@ namespace BlazorDungeonAndDragon.Client.Repositorios
         };
             }
         }
+
+        public Clase AgregarClase()
+        {
+            return new Clase() { Nombre = "Clérigo", PuntosDeGolpe = 8, Descripcion = "Los clérigos son intermediarios entre el mundo mortal y los distantes planos divinos. Tan diferentes entre ellos como los dioses a los que sirven, los clérigos se esfuerzan por personificar las obras de sus deidades. No son sacerdotes ordinarios, un clérigo se encuentra imbuido de magia divina." };
+        }
     }
 }

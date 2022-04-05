@@ -8,7 +8,9 @@ namespace BlazorDungeonAndDragon.Client.Repositorios
 {
     public interface IRepositorio
     {
-        List<Clase> ObtenerClases();      
+        List<Clase> ObtenerClases();
+
+        Clase AgregarClase();
         }
     }
 

@@ -1,8 +1,12 @@
 ﻿@page "/clases"
 
-<div>
+<div style="margin-bottom: 20px">
     <h1>Clases</h1>
     <ListaClases Clases="clases" />
 </div>
 
 <button @onclick="AgregarClase">Agregar Clase</button>
+
+<Mensaje @ref="mensaje">
+    <div> La clase: @claseParaAgregar.Nombre ya está incluida. Verifique. </div>
+</Mensaje> 

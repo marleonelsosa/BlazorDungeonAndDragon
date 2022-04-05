@@ -1,17 +1,21 @@
-﻿<div>
-    <div>
-        <h3>@Clase.Nombre</h3>
+﻿<div style=" margin-right: 10px; margin-left: 10px">
+    <div style="margin-bottom: 10px">
+        <h1 align="middle">@Clase.Nombre</h1>
     </div>
-    <div style="display: flex; justify-content:left; margin-bottom: 20px">
-        <p><b>Descripción: </b> @Clase.Descripcion</p>
-        <img src=@Clase.Imagen class="imagen imagen-seleccionable" align="right" height="100" />
+
+    <div style="display: flex; justify-content:center; margin-bottom: 20px">
+        @*<p><b>Descripción: </b> @Clase.Descripcion</p>*@
+        <img src=@Clase.Imagen class="imagen imagen-seleccionable" align="middle" height="500" />      
     </div>
+
     <div>
         <p><b>Puntos de Golpe: </b>@Clase.PuntosDeGolpe</p>
     </div>
+
         @if (MostrarBotones)
         {
             <div>
+                <a class="btn btn-info">Editar</a>
                 <button type="button" class="btn btn-danger"
                         @onclick="@(() => EliminarClase.InvokeAsync(Clase))">
                     Eliminar
